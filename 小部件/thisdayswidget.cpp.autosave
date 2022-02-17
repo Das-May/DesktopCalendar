@@ -1,0 +1,92 @@
+#include "thisdayswidget.h"
+#include <QPalette>
+#include <QLabel>
+#include <QMouseEvent>
+#include <QDebug>
+#include <QPixmap>
+#include <QFont>
+
+#define dx 78
+#define dy 42
+#define w 52
+#define h 38
+
+
+ThisDaysWidget::ThisDaysWidget(QWidget *parent, GetTime *gt) : QWidget(parent)
+{
+    QPalette  whitePe;//设置字体颜色 白色
+    whitePe.setColor(QPalette::WindowText,Qt::white);
+    QPalette  grayPe;//设置字体颜色 灰色
+    grayPe.setColor(QPalette::WindowText,Qt::gray);
+    QFont f("Microsoft YaHei", 8, 70);//设置字体、字号、字重 ：微软雅黑 8号 加粗
+
+
+    ////////表头//////
+    for(int i = 0 ;i < 7 ;i++)
+    {
+        QLabel *label = new QLabel(this);
+        label->setText(weekday[i]);
+        label->setPalette(whitePe);
+        label->move(15 + dx * i, 0);
+        label->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+        label->setFixedSize(w, h);//在使用QLable的setAlignment的时候，必须设置size
+        label->setFont(f);//设置文本字体、字号
+
+    }
+
+    ////////日期/////////
+    for(int i = 0 ;i < 42; i++)
+    {
+
+        qlabel_group.push_back(new QLabel(this));
+        qlabel_group[i]->setAlignment(Qt::AlignHCenter | Qt::AlignTop);//设置对齐方式
+        QString text;
+        text.append("<p style='line-height:20%'>").append(QString::number(gt->monthDayArray[i])).
+                append("</p>").append("<p style='line-height:10%'>").append(gt->monthLunarArray[i]).append("</p>");
+        qlabel_group[i]->setText(text);
+        if(gt->monthBoolArray[i] == true)//设置文本颜色
+            qlabel_group[i]->setPalette(whitePe);
+        else
+            qlabel_group[i]->setPalette(grayPe);
+        qlabel_group[i]->setFont(f);//设置文本字体、字号
+        //move的第一个参数是x轴坐标 对应第几列
+        //第二个参数时y轴坐标，对应第几行
+        qlabel_group[i]->move(15 + dx * (i % 7), 45 + dy*(i / 7));//设置位置
+        qlabel_group[i]->setFixedSize(w, h);//在使用QLable的setAlignment的时候，必须设置size
+        qlabel_group[i]->setStyleSheet("line-height:7px");
+    }
+
+    todayIndex = gt->getTodayIndex();
+    qlabel_group[todayIndex]->setStyleSheet("border-image: url(:/res/stressBackground.png);color:black;");//对于今天的日期，要尤其强调
+
+}
+//获取被选中的label的索引号
+int ThisDaysWidget::getSeletedIndex()
+{
+    return selectedIndex;
+}
+//更新日历
+void ThisDaysWidget::update(GetTime *gt)
+{
+    
+}
+
+//重写鼠标点击事件
+void ThisDaysWidget::mousePressEvent(QMouseEvent *event)
+{
+//    qDebug()<<"按下鼠标";
+    int x = event->x() % dx;
+    int y = event->y()-45;
+    if( x>15 && x<63 && y>0 && event->x()<600)
+    {
+        if(selectedIndex != todayIndex)
+        {
+            qlabel_group[selectedIndex]->setStyleSheet("border-image: url()");
+        }
+        selectedIndex = ((event->y()-45) / dy) * 7 + (event->x()/dx);
+        if(selectedIndex != todayIndex)
+        {
+            qlabel_group[selectedIndex]->setStyleSheet("border-image: url(:/res/whiteBorder.png)");
+        }
+    }
+}

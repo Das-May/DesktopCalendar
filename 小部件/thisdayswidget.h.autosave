@@ -1,0 +1,29 @@
+#ifndef THISDAYSWIDGET_H
+#define THISDAYSWIDGET_H
+
+#include <QWidget>
+#include <QLabel>
+#include "gettime.h"
+
+class ThisDaysWidget : public QWidget
+{
+    Q_OBJECT
+public:
+    explicit ThisDaysWidget(QWidget *parent = nullptr, GetTime *gt = new GetTime);
+    int getSeletedIndex();//获取被选中的label的索引号
+    void update(GetTime *gt);//更新日历
+    void mousePressEvent(QMouseEvent *event);    //重写鼠标点击事件
+
+private:
+    QString weekday[7]={"一","二","三","四","五","六","日"};
+    QVector<QLabel*> qlabel_group; //维护日历QLabel数组
+    int todayIndex;
+    int selectedIndex;
+
+signals:
+
+public slots:
+
+};
+
+#endif // THISDAYSWIDGET_H
