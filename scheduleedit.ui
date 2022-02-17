@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ScheduleEdit</class>
+ <widget class="QWidget" name="ScheduleEdit">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>586</width>
+    <height>302</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>586</width>
+    <height>302</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>586</width>
+    <height>302</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QStackedWidget" name="stackedWidget">
+   <property name="geometry">
+    <rect>
+     <x>258</x>
+     <y>30</y>
+     <width>313</width>
+     <height>249</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>313</width>
+     <height>249</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>313</width>
+     <height>249</height>
+    </size>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="currentIndex">
+    <number>1</number>
+   </property>
+   <widget class="QWidget" name="page">
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>174</width>
+      <height>270</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>174</width>
+      <height>270</height>
+     </size>
+    </property>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>313</width>
+       <height>249</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>313</width>
+       <height>249</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>313</width>
+       <height>249</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255, 255, 255, 0.3);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_2">
+    <widget class="QTextEdit" name="textEdit">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>313</width>
+       <height>249</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>313</width>
+       <height>249</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>313</width>
+       <height>249</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255, 255, 255, 30%);</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="pixLabel">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>145</y>
+     <width>200</width>
+     <height>135</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>200</width>
+     <height>135</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>200</width>
+     <height>135</height>
+    </size>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="mdLabel">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>80</y>
+     <width>200</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>200</width>
+     <height>45</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>200</width>
+     <height>45</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 24pt &quot;微软雅黑&quot;;
+color: rgba(255, 255, 255, 70%);</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="yLabel">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>40</y>
+     <width>120</width>
+     <height>35</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>120</width>
+     <height>35</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>120</width>
+     <height>35</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 70 14pt &quot;微软雅黑&quot;;
+color: rgba(255, 255, 255, 60%);</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

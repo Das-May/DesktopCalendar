@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res/backButton.png</file>
+        <file>res/Background.jpg</file>
+        <file>res/close.png</file>
+        <file>res/closeBackground.png</file>
+        <file>res/dot1.png</file>
+        <file>res/lastButton.png</file>
+        <file>res/nextButton.png</file>
+        <file>res/star1.png</file>
+        <file>res/star2.png</file>
+        <file>res/star3.png</file>
+        <file>res/star4.png</file>
+        <file>res/whiteBorder.png</file>
+        <file>res/calendar.txt</file>
+        <file>res/stressBackground.png</file>
+        <file>res/icon.png</file>
+        <file>res/addButton.png</file>
+        <file>res/deleteButton.png</file>
+        <file>res/pixLabel.png</file>
+    </qresource>
+</RCC>
